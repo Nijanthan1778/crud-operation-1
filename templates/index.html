@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        display: inline-block;
+        text-align: center;
+      }
+      .mark {
+        width: 50px;
+      }
+      table,
+      td,
+      th {
+        border: 2px solid #000;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post">
+      <input name="name" type="text" placeholder="Name" /><br /><br />
+      <input name="age" type="number" placeholder="Age" /><br /><br />
+      <input name="rollNo" type="number" placeholder="Roll_NO" /><br /><br />
+      <input name="mark1" type="number" placeholder="Mark1" /><br /><br />
+      <input name="mark2" type="number" placeholder="Mark2" /><br /><br />
+      <input name="mark3" type="number" placeholder="Mark3" /><br /><br />
+      <input name="mark4" type="number" placeholder="Mark4" /><br /><br />
+      <input name="mark5" type="number" placeholder="Mark5" /><br /><br />
+      <input type="submit" value="submit" />
+      <input type="reset" value="Reset" />
+    </form>
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>RollNo</th>
+        <th>
+          Marks
+          <br />
+          <p>Mark1</p>
+          <p>Mark2</p>
+          <p>Mark3</p>
+          <p>Mark4</p>
+          <p>Mark4</p>
+        </th>
+      </tr>
+      {%for i in studentList%}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Age}}</td>
+        <td>{{i.Roll_NO}}</td>
+        <td>
+          {%for j in i.Marks%}
+          <p class="mark">{{j}}</p>
+          {%endfor%}
+        </td>
+        <td>
+          <a href="{{url_for('editItem',item=loop.index)}}">Edit</a>
+          <a href="{{url_for('deleteItem',item=loop.index)}}">Delete</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>

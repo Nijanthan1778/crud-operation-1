@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="post">
+      <label>Name</label>
+      <input type="text" name="name" value="{{s.Name}}" /><br /><br />
+      <label>Age</label>
+      <input type="number" name="age" value="{{s.Age}}" /><br /><br />
+      <label>Roll_NO</label>
+      <input type="number" name="rollNo" value="{{s.Roll_NO}}" /><br /><br />
+      <label>Mark1</label>
+      <input type="number" name="mark1" value="{{s.Marks[0]}}" /><br /><br />
+      <label>Mark2</label>
+      <input type="number" name="mark2" value="{{s.Marks[1]}}" /><br /><br />
+      <label>Mark3</label>
+      <input type="number" name="mark3" value="{{s.Marks[2]}}" /><br /><br />
+      <label>Mark4</label>
+      <input type="number" name="mark4" value="{{s.Marks[3]}}" /><br /><br />
+      <label>Mark5</label>
+      <input type="number" name="mark5" value="{{s.Marks[4]}}" /><br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>
